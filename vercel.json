@@ -1,6 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "(.*)", "destination": "/api" }],
+  "rewrites": [
+    {
+      "source": "(.*)",
+      "destination": "/api"
+    }
+  ],
   "regions": ["bom1"],
   "outputDirectory": "dist",
   "headers": [
@@ -25,11 +30,11 @@
         },
         {
           "key": "Author",
-          "value": "Sumit Kolhe"
+          "value": "Venu Bingi"
         },
         {
           "key": "Github",
-          "value": "https://github.com/sumitkolhe/jiosaavn-api"
+          "value": "https://github.com/venubingi01/sangeetham-api"
         }
       ]
     }
