@@ -45,9 +45,9 @@ export class App {
 
         info: {
           version: '1.0.0',
-          title: 'JioSaavn API',
+          title: 'Sangeetham API',
           description: `# Introduction 
-        \nJioSaavn API, accessible at [saavn.dev](https://saavn.dev), is an unofficial API that allows users to download high-quality songs from [JioSaavn](https://jiosaavn.com). 
+        \nSangeetham API is an unofficial API that allows users to download and stream high-quality songs, albums, playlists, and artists from [JioSaavn](https://jiosaavn.com). 
         It offers a fast, reliable, and easy-to-use API for developers. \n`
         },
         servers: [{ url: `${protocol}//${hostname}${port ? `:${port}` : ''}`, description: 'Current environment' }]
@@ -57,19 +57,19 @@ export class App {
     this.app.get(
       '/docs',
       apiReference({
-        pageTitle: 'JioSaavn API Documentation',
+        pageTitle: 'Sangeetham API Documentation',
         theme: 'deepSpace',
         isEditable: false,
         layout: 'modern',
         darkMode: true,
         metaData: {
-          applicationName: 'JioSaavn API',
-          author: 'Sumit Kolhe',
-          creator: 'Sumit Kolhe',
-          publisher: 'Sumit Kolhe',
+          applicationName: 'Sangeetham API',
+          author: 'Venu Bingi',
+          creator: 'Venu Bingi',
+          publisher: 'Venu Bingi',
           robots: 'index, follow',
           description:
-            'JioSaavn API is an unofficial wrapper written in TypeScript for jiosaavn.com providing programmatic access to a vast library of songs, albums, artists, playlists, and more.'
+            'Sangeetham API is an unofficial wrapper written in TypeScript for jiosaavn.com providing programmatic access to a vast library of songs, albums, artists, playlists, and more.'
         },
         url: '/swagger'
       })

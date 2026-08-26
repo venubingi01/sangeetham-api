@@ -22,38 +22,23 @@ export const Meteors = ({ number }: { number: number }) => {
 }
 
 Home.get('/', (c) => {
-  const title = 'JioSaavn API'
+  const title = 'Sangeetham API'
   const description =
-    'JioSaavn API is an unofficial wrapper written in TypeScript for jiosaavn.com providing programmatic access to a vast library of songs, albums, artists, playlists, and more.'
+    'Sangeetham API is an unofficial wrapper written in TypeScript for jiosaavn.com providing programmatic access to a vast library of songs, albums, artists, playlists, and more.'
 
   return c.html(
     <html>
       <head>
-        <title>JioSaavn API</title>
+        <title>Sangeetham API</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="utf-8" />
         <meta name="description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://saavn.dev/" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://saavn.dev/" />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
-        <meta
-          property="og:image"
-          content="https://raw.githubusercontent.com/sumitkolhe/jiosaavn-api/main/assets/preview.jpg"
-        />
-        <meta
-          property="twitter:image"
-          content="https://raw.githubusercontent.com/sumitkolhe/jiosaavn-api/main/assets/preview.jpg"
-        />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="https://raw.githubusercontent.com/sumitkolhe/jiosaavn-api/main/assets/favicon.ico"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -105,7 +90,7 @@ Home.get('/', (c) => {
               />
             </svg>
             <p class="text-2xl md:text-4xl text-transparent font-bold leading-none bg-clip-text bg-gradient-to-r from-[#ff7d78] to-purple-600">
-              JioSaavn API
+              Sangeetham API
               <span class="uppercase text-sm ml-3 text-gray-500 font-normal sm:hidden">Unofficial</span>
             </p>
             <p class="hidden sm:block animate-[borderAnimation_3s_linear_infinite] rounded bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-[length:400%_400%] p-1">
@@ -125,7 +110,7 @@ Home.get('/', (c) => {
                 </span>
                 <span class="text-neutral-200 font-bold text-lg sm:text-xl md:text-2xl mt-2">Explore the Docs</span>
                 <div class="text-neutral-500 mt-2">
-                  Check out the documentation to learn how to use the JioSaavn API.
+                  Check out the documentation to learn how to use the Sangeetham API.
                 </div>
               </div>
             </a>
@@ -133,21 +118,21 @@ Home.get('/', (c) => {
             <a
               target="_blank"
               class="p-4 sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4"
-              href="https://github.com/sumitkolhe/jiosaavn-api"
+              href="https://github.com/venubingi01/sangeetham-api"
             >
               <div class="flex flex-col">
                 <span class="text-xs uppercase bg-opacity-15 rounded text-center max-w-fit px-2 py-1 font-bold tracking-wide bg-green-500 text-green-500">
                   Open Source
                 </span>
                 <span class="text-neutral-200 font-bold text-lg sm:text-xl md:text-2xl mt-2">Open Source</span>
-                <div class="text-neutral-500 mt-2">Saavn API is open-source. Check out the source code on github.</div>
+                <div class="text-neutral-500 mt-2">Sangeetham API is open-source. Check out the source code on GitHub.</div>
               </div>
             </a>
 
             <a
               target="_blank"
               class="p-4 sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4"
-              href="https://github.com/sumitkolhe/jiosaavn-api/issues"
+              href="https://github.com/venubingi01/sangeetham-api/issues"
             >
               <div class="flex flex-col">
                 <span class="text-xs uppercase bg-opacity-15 rounded text-center max-w-fit px-2 py-1 font-bold tracking-wide bg-violet-500 text-violet-500">
@@ -166,35 +151,18 @@ Home.get('/', (c) => {
                 <span class="text-xs uppercase bg-opacity-15 rounded text-center max-w-fit px-2 py-1 font-bold tracking-wide bg-blue-500 text-blue-500">
                   Contact
                 </span>
-                <span class="text-neutral-200 font-bold text-lg sm:text-xl md:text-2xl mt-2">Sumit Kolhe</span>
+                <span class="text-neutral-200 font-bold text-lg sm:text-xl md:text-2xl mt-2">Venu Bingi</span>
                 <div class="text-neutral-500 mt-2">
                   Have a question or need help? Reach out on{' '}
                   <a
-                    href="https://github.com/sumitkolhe"
+                    href="https://github.com/venubingi01"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline text-indigo-500"
                   >
                     GitHub
                   </a>
-                  ,{' '}
-                  <a
-                    href="https://twitter.com/thesumitkolhe"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline text-sky-500"
-                  >
-                    Twitter
-                  </a>
-                  , or{' '}
-                  <a
-                    href="https://t.me/sumitkolhe"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline text-pink-500"
-                  >
-                    Telegram.
-                  </a>
+                  .
                 </div>
               </div>
             </div>
