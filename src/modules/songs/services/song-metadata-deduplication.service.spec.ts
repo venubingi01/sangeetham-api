@@ -44,7 +44,7 @@ describe('song metadata and deduplication', () => {
   it('removes exact IDs and conservative same-album duplicates', () => {
     const first = createSong()
     const exactIdDuplicate = createSong({ name: 'Different title' })
-    const sameRecording = createSong({ id: 'song-2', name: 'Rock and Roll' })
+    const sameRecording = createSong({ id: 'song-2' })
     const otherAlbum = createSong({ id: 'song-3', album: { id: 'album-2', name: 'Reissue', url: null } })
     const otherLanguage = createSong({ id: 'song-4', language: 'Hindi' })
 
