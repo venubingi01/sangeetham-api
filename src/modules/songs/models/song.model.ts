@@ -56,6 +56,16 @@ export const SongAPIResponseModel = z.object({
   })
 })
 
+export const SongCreditsModel = z.object({
+  singers: z.array(ArtistMapModel),
+  musicDirectors: z.array(ArtistMapModel),
+  lyricists: z.array(ArtistMapModel),
+  composers: z.array(ArtistMapModel),
+  cast: z.array(ArtistMapModel),
+  directors: z.array(ArtistMapModel),
+  producers: z.array(ArtistMapModel)
+})
+
 export const SongModel = z.object({
   id: z.string(),
   name: z.string(),
@@ -81,6 +91,7 @@ export const SongModel = z.object({
     featured: z.array(ArtistMapModel),
     all: z.array(ArtistMapModel)
   }),
+  credits: SongCreditsModel,
   image: z.array(DownloadLinkModel),
   downloadUrl: z.array(DownloadLinkModel)
 })
