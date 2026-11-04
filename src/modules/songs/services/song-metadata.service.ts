@@ -60,6 +60,16 @@ export const normalizeSongMetadata = (song: Song): Song => ({
     ...song.album,
     name: song.album.name ? decodeMetadataText(song.album.name) : null
   },
+  musicDirector: song.musicDirector ? decodeMetadataText(song.musicDirector) : null,
+  credits: song.credits ? {
+    singers: song.credits.singers.map(normalizeArtist),
+    musicDirectors: song.credits.musicDirectors.map(normalizeArtist),
+    lyricists: song.credits.lyricists.map(normalizeArtist),
+    composers: song.credits.composers.map(normalizeArtist),
+    cast: song.credits.cast.map(normalizeArtist),
+    directors: song.credits.directors.map(normalizeArtist),
+    producers: song.credits.producers.map(normalizeArtist)
+  } : undefined,
   artists: {
     primary: song.artists.primary.map(normalizeArtist),
     featured: song.artists.featured.map(normalizeArtist),

@@ -22,6 +22,7 @@ const createSong = (overrides: Partial<Song> = {}): Song => ({
   url: 'https://example.com/song-1',
   copyright: null,
   album: { id: 'album-1', name: 'Album &quot;One&quot;', url: null },
+  credits: { singers: [], musicDirectors: [], lyricists: [], composers: [], cast: [], directors: [], producers: [] },
   artists: {
     primary: [{ id: 'artist-1', name: 'Singer &amp; Co', role: 'singer', type: 'artist', image: [], url: '' }],
     featured: [],
