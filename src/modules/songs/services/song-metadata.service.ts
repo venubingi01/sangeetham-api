@@ -21,7 +21,9 @@ export const decodeMetadataText = (value: string): string =>
   value.replace(/&(#x[\da-f]+|#\d+|amp|apos|quot|lt|gt|nbsp);/gi, (entity, code: string) => {
     if (code.startsWith('#x') || code.startsWith('#X')) {
       const point = Number.parseInt(code.slice(2), 16)
-      return Number.isFinite(point) ? String.fromCodePoint(point) : entity
+      return Number.isInteger(point) && point >= 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff)
+        ? String.fromCodePoint(point)
+        : entity
     }
 
     if (code.startsWith('#')) {
@@ -48,6 +50,7 @@ export const normalizeSongMetadata = (song: Song): Song => ({
   language: decodeMetadataText(song.language),
   year: song.year ? decodeMetadataText(song.year) : null,
   label: song.label ? decodeMetadataText(song.label) : null,
+  copyright: song.copyright ? decodeMetadataText(song.copyright) : null,
   duration: Number.isFinite(song.duration) && (song.duration ?? 0) > 0 ? song.duration : null,
   playCount: Number.isFinite(song.playCount) && (song.playCount ?? -1) >= 0 ? song.playCount : null,
   album: {
