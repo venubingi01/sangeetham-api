@@ -92,7 +92,7 @@ export const SongModel = z.object({
     all: z.array(ArtistMapModel)
   }),
   credits: SongCreditsModel.optional(),
-  musicDirector: z.string().nullable(),
+  musicDirector: z.string().nullable().optional(),
   image: z.array(DownloadLinkModel),
   downloadUrl: z.array(DownloadLinkModel)
 })
