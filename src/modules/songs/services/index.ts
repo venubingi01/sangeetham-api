@@ -1,1 +1,3 @@
 export * from './song.service'
+export * from './song-metadata.service'
+export * from './song-deduplication.service'
