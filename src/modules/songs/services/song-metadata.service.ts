@@ -28,7 +28,9 @@ export const decodeMetadataText = (value: string): string =>
 
     if (code.startsWith('#')) {
       const point = Number.parseInt(code.slice(1), 10)
-      return Number.isFinite(point) ? String.fromCodePoint(point) : entity
+      return Number.isInteger(point) && point >= 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff)
+        ? String.fromCodePoint(point)
+        : entity
     }
 
     return HTML_ENTITIES[code.toLowerCase()] ?? entity
@@ -49,6 +51,7 @@ export const normalizeSongMetadata = (song: Song): Song => ({
   name: decodeMetadataText(song.name),
   language: decodeMetadataText(song.language),
   year: song.year ? decodeMetadataText(song.year) : null,
+  releaseDate: song.releaseDate ? decodeMetadataText(song.releaseDate) : null,
   label: song.label ? decodeMetadataText(song.label) : null,
   copyright: song.copyright ? decodeMetadataText(song.copyright) : null,
   duration: Number.isFinite(song.duration) && (song.duration ?? 0) > 0 ? song.duration : null,
