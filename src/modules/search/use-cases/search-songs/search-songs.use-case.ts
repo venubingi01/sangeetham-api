@@ -1,6 +1,7 @@
 import { Endpoints } from '#common/constants'
 import { useFetch } from '#common/helpers'
 import { createSongPayload } from '#modules/songs/helpers'
+import { deduplicateSongs, normalizeSongMetadata } from '#modules/songs/services'
 import type { IUseCase } from '#common/types'
 import type { SearchSongAPIResponseModel, SearchSongModel } from '#modules/search/models'
 import type { z } from 'zod'
@@ -24,10 +25,14 @@ export class SearchSongsUseCase implements IUseCase<SearchSongsArgs, z.infer<typ
       }
     })
 
+    const normalizedSongs = data.results?.map(createSongPayload).map(normalizeSongMetadata) || []
+
     return {
+      // Keep provider pagination metadata unchanged. Deduplication applies only
+      // to this fetched page, not to the full upstream catalogue.
       total: data.total,
       start: data.start,
-      results: data.results?.map(createSongPayload).slice(0, limit) || []
+      results: deduplicateSongs(normalizedSongs).slice(0, limit)
     }
   }
 }
