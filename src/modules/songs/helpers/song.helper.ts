@@ -35,6 +35,7 @@ export const createSongPayload = (song: z.infer<typeof SongAPIResponseModel>): z
       all: allArtists
     },
     credits: extractSongCredits(allArtists),
+    musicDirector: song.more_info?.music || null,
     image: createImageLinks(song.image),
     downloadUrl: createDownloadLinks(song.more_info?.encrypted_media_url)
   }
